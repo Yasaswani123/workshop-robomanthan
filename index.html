@@ -1,59 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Your Name</h1>
-            <p class="subtitle">Engineering Student @ AITS Tirupati</p>
-            <div class="contact-bar">
-                <span>📧 yourname@email.com</span> | 
-                <span>📞 +91 00000 00000</span>
-            </div>
-        </header>
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+}
 
-        <hr>
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+}
 
-        <section>
-            <h2>Education</h2>
-            <div class="item">
-                <div class="row">
-                    <strong>B.Tech in Engineering</strong>
-                    <span>2022 - 2026</span>
-                </div>
-                <p>Annamacharya Institute of Technology and Sciences, Tirupati</p>
-                <small>Autonomous | NAAC 'A' Grade</small>
-            </div>
-        </section>
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
 
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-flex">
-                <span class="pill">Python</span>
-                <span class="pill">Java</span>
-                <span class="pill">Web Development</span>
-                <span class="pill">GitHub</span>
-            </div>
-        </section>
+h1 { font-size: 2.2rem; margin: 0; letter-spacing: -1px; }
+.subtitle { color: #666; font-size: 1.1rem; margin-top: 5px; }
+.contact-bar { font-size: 0.9rem; color: #888; margin-top: 15px; }
 
-        <section>
-            <h2>Projects</h2>
-            <div class="item">
-                <strong>College Management Dashboard</strong>
-                <p>A professional web interface for tracking student data, attendance, and campus resources efficiently.</p>
-            </div>
-            <div class="item">
-                <strong>Workshop-Robomanthan</strong>
-                <p>Active participant in robotics and automation training.</p>
-            </div>
-        </section>
+hr { border: 0; border-top: 1px solid #eee; margin: 30px 0; }
 
-    </div>
-</body>
-</html>
+section { margin-bottom: 40px; }
+h2 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #0070f3; margin-bottom: 20px; }
+
+.item { margin-bottom: 20px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; }
+
+.skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { 
+    background: #f0f0f0; 
+    padding: 6px 14px; 
+    border-radius: 6px; 
+    font-size: 0.9rem; 
+    font-weight: 500;
+}
+
+small { color: #999; }
+strong { color: #000; font-size: 1.1rem; }
+p { margin: 5px 0; color: #444; }
