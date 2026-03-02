@@ -1,67 +1,43 @@
-:root {
-    --bg: #0d1117;
-    --card-bg: #161b22;
-    --accent: #58a6ff;
-    --text: #c9d1d9;
-    --white: #ffffff;
-}
-
 body {
-    background-color: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #1a1a1a;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 header {
     text-align: center;
-    padding: 40px 0;
+    margin-bottom: 30px;
 }
 
-h1 { color: var(--white); font-size: 2.5rem; margin: 0; }
-.tagline { color: var(--accent); font-size: 1.2rem; font-weight: 500; }
+h1 { font-size: 2.2rem; margin: 0; letter-spacing: -1px; }
+.subtitle { color: #666; font-size: 1.1rem; margin-top: 5px; }
+.contact-bar { font-size: 0.9rem; color: #888; margin-top: 15px; }
 
-.status-badge {
-    display: inline-block;
-    background: rgba(88, 166, 255, 0.1);
-    color: var(--accent);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-top: 10px;
-    border: 1px solid var(--accent);
+hr { border: 0; border-top: 1px solid #eee; margin: 30px 0; }
+
+section { margin-bottom: 40px; }
+h2 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; color: #0070f3; margin-bottom: 20px; }
+
+.item { margin-bottom: 20px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; }
+
+.skills-flex { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { 
+    background: #f0f0f0; 
+    padding: 6px 14px; 
+    border-radius: 6px; 
+    font-size: 0.9rem; 
+    font-weight: 500;
 }
 
-.card {
-    background: var(--card-bg);
-    border: 1px solid #30363d;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 20px;
-}
-
-h2 { color: var(--white); border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-
-.edu-item h3 { margin: 10px 0 5px 0; color: var(--white); }
-.meta { font-size: 0.8rem; color: #8b949e; }
-.cgpa { color: #39d353; font-weight: bold; margin-top: 5px; }
-
-.workshop-box { background: #010409; padding: 15px; border-radius: 8px; }
-
-.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-.skills-grid span {
-    background: #21262d;
-    padding: 5px 12px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    border: 1px solid #30363d;
-}
-
-footer { text-align: center; padding: 40px 0; border-top: 1px solid #30363d; }
+small { color: #999; }
+strong { color: #000; font-size: 1.1rem; }
+p { margin: 5px 0; color: #444; }
