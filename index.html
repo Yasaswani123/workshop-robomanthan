@@ -1,137 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yasaswani Portfolio</title>
-
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, sans-serif;
-}
-
-body{
-background:#f5f7fa;
-}
-
-/* main container */
-.container{
-max-width:900px;
-margin:40px auto;
-background:white;
-padding:30px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-
-/* profile section */
-.profile{
-display:flex;
-align-items:center;
-gap:20px;
-margin-bottom:30px;
-flex-wrap:wrap;
-}
-
-.profile img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
-border:3px solid #007bff;
-}
-
-/* headings */
-h1{
-color:#333;
-}
-
-.section{
-margin-top:25px;
-}
-
-.section h2{
-border-bottom:2px solid #007bff;
-display:inline-block;
-margin-bottom:10px;
-color:#007bff;
-}
-
-ul{
-margin-left:20px;
-line-height:1.6;
-}
-
-footer{
-text-align:center;
-margin-top:30px;
-color:gray;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | RoboManthan Workshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <div class="cursor-glow"></div>
+    
+    <nav>
+        <div class="logo">ROBO<span>MANTHAN</span></div>
+        <div class="tag">AITS TIRUPATI (AUTONOMOUS)</div>
+    </nav>
 
-<div class="container">
+    <main>
+        <header>
+            <span class="badge">Student Developer & AI Researcher</span>
+            <h1>Engineering the <br><span class="gradient-text">Future of Robotics.</span></h1>
+            <p>Currently participating in <strong>Workshop-Robomanthan</strong>. Focusing on the intersection of AI, Autonomous Systems, and hardware integration at AITS Tirupati.</p>
+            <div class="links">
+                <a href="#projects" class="btn-main">View Projects</a>
+                <a href="https://github.com" class="btn-sub">GitHub</a>
+            </div>
+        </header>
 
-<!-- Profile -->
-<div class="profile">
-<img src="profile.jpg" alt="Yasaswani Profile Photo">
+        <section id="projects">
+            <h2>Workshop Track</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-num">01</div>
+                    <h3>Autonomous Navigator</h3>
+                    <p>Researching pathfinding algorithms for robotics within the AITS ecosystem.</p>
+                    <div class="tech">Python • ROS • OpenCV</div>
+                </div>
+                <div class="card">
+                    <div class="card-num">02</div>
+                    <h3>AITS Nexus</h3>
+                    <p>AI-driven campus management system designed for autonomous institutions.</p>
+                    <div class="tech">Node.js • React • AWS</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<div>
-<h1>Yasaswani Prasad</h1>
-<p>AI Student | Developer | Tech Enthusiast</p>
-<p>Email: yasaswanianantharaju@gmail.com</p>
-<p>Location: India</p>
-</div>
-</div>
-
-<!-- Career Objective -->
-<div class="section">
-<h2>Career Objective</h2>
-<p>
-Passionate Artificial Intelligence student interested in building smart applications,
-stock market prediction systems, and innovative technology solutions.
-</p>
-</div>
-
-<!-- Skills -->
-<div class="section">
-<h2>Skills</h2>
-<ul>
-<li>Python</li>
-<li>Java</li>
-</ul>
-</div>
-
-<!-- Education -->
-<div class="section">
-<h2>Education</h2>
-<ul>
-<li>B.Tech — AITS</li>
-<li>Intermediate — Sri Chaitanya</li>
-<li>School — KVS CBSE</li>
-</ul>
-</div>
-
-<!-- Projects -->
-<div class="section">
-<h2>Projects</h2>
-<ul>
-<li>Stock Market Prediction using Python</li>
-<li>AI Chatbot</li>
-<li>Trading App Design</li>
-</ul>
-</div>
-
-<footer>
-<p>© 2026 Yasaswani Prasad</p>
-</footer>
-
-</div>
-
+    <footer>
+        <p>Built during Workshop-Robomanthan @ AITS Tirupati | 2026</p>
+    </footer>
 </body>
 </html>
