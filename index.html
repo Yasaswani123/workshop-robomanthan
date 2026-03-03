@@ -3,57 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio</title>
+    <title>Your Name | AI & ML Student</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-logo">AI<span>.Student</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <header>
-            <h1>Yasaswani Prasad</h1>
-            <p class="subtitle">Engineering Student @ AITS Tirupati</p>
-            <div class="contact-bar">
-                <span>📧 yasaswanianantharaju@email.com</span> | 
-                <span>📞 +91 7729043161</span>
+            <div class="hero-content">
+                <span class="badge">AITS Tirupati (Autonomous)</span>
+                <h1>Your Name</h1>
+                <p class="role-text">AI & Machine Learning Student</p>
             </div>
         </header>
 
-        <hr>
-
-        <section>
-            <h2>Education</h2>
-            <div class="item">
-                <div class="row">
-                    <strong>B.Tech in Engineering</strong>
-                    <span>2023 - 2027</span>
-                </div>
-                <p>Annamacharya Institute of Technology and Sciences, Tirupati</p>
-                <small>Autonomous | NAAC 'A' Grade</small>
-            </div>
+        <section id="about">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="about-p">
+                Aspiring AI Researcher and Developer currently pursuing Engineering at <strong>Annamacharya Institute of Technology and Sciences</strong>. 
+                I specialize in bridging the gap between complex data and intelligent user interfaces.
+            </p>
         </section>
 
-        <section>
-            <h2>Skills</h2>
+        <section id="skills">
+            <h2 class="section-title">Technical Arsenal</h2>
             <div class="skills-flex">
-                <span class="pill">Python</span>
-                <span class="pill">Java</span>
-                <span class="pill">Web Development</span>
-                <span class="pill">GitHub</span>
+                <span class="skill-pill">Artificial Intelligence</span>
+                <span class="skill-pill">Machine Learning</span>
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">Neural Networks</span>
+                <span class="skill-pill">HTML5 / CSS3</span>
+                <span class="skill-pill">Git / GitHub</span>
             </div>
         </section>
 
-        <section>
-            <h2>Projects</h2>
-            <div class="item">
-                <strong>College Management Dashboard</strong>
-                <p>A professional web interface for tracking student data, attendance, and campus resources efficiently.</p>
-            </div>
-            <div class="item">
-                <strong>Workshop-Robomanthan</strong>
-                <p>Active participant in robotics and automation training.</p>
+        <section id="projects">
+            <h2 class="section-title">Featured Intelligence</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>College Dashboard</h3>
+                    <p>Designed an administrative portal optimizing student data flow and resource allocation.</p>
+                    <div class="project-footer">View on GitHub →</div>
+                </div>
+                <div class="project-card">
+                    <h3>ML Predictor</h3>
+                    <p>A supervised learning project analyzing datasets to predict outcome probabilities with 92% accuracy.</p>
+                    <div class="project-footer">View on GitHub →</div>
+                </div>
             </div>
         </section>
 
+        <section id="contact">
+            <h2 class="section-title">Connect</h2>
+            <div class="contact-card">
+                <p>Open for internships and research collaborations.</p>
+                <div class="contact-btns">
+                    <a href="mailto:yourname@email.com" class="btn-primary">Email Me</a>
+                    <a href="https://github.com/yourusername" target="_blank" class="btn-secondary">GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 Developed by Your Name | AI Student @ AITS Tirupati</p>
+        </footer>
     </div>
+
 </body>
 </html>
