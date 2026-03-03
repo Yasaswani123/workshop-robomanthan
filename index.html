@@ -3,84 +3,362 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | AI & ML Student</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <title>AI_STATION // Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f2ff;
+            --neon-purple: #bc13fe;
+            --neon-pink: #ff0055;
+            --dark-bg: #050505;
+            --card-bg: rgba(15, 15, 25, 0.8);
+            --font-main: 'Rajdhani', sans-serif;
+            --font-gaming: 'Orbitron', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: crosshair; /* Gaming feel */
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- GAMING BACKGROUND (Animated Grid & Stars) --- */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            width: 100%;
+            height: 100%;
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            perspective: 500px;
+            z-index: -1;
+            transform: rotateX(45deg);
+            transform-origin: bottom;
+            animation: grid-move 4s linear infinite;
+        }
+
+        @keyframes grid-move {
+            from { background-position: 0 0; }
+            to { background-position: 0 50px; }
+        }
+
+        /* Scanline Effect */
+        body::after {
+            content: " ";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* --- CONTENT WRAPPER --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        section {
+            padding: 100px 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: var(--font-gaming);
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+            margin-bottom: 10px;
+            animation: flicker 3s infinite;
+        }
+
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% { text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue); }
+            20%, 24%, 55% { text-shadow: none; }
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--neon-purple);
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        /* --- CARDS & PANELS --- */
+        .glass-panel {
+            background: var(--card-bg);
+            border: 1px solid var(--neon-blue);
+            padding: 40px;
+            border-radius: 5px;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            clip-path: polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%);
+        }
+
+        .glass-panel::before {
+            content: "SYSTEM_ACTIVE";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 0.7rem;
+            color: var(--neon-blue);
+            letter-spacing: 2px;
+        }
+
+        h2.section-title {
+            font-family: var(--font-gaming);
+            color: var(--neon-purple);
+            margin-bottom: 30px;
+            text-shadow: 0 0 5px var(--neon-purple);
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-node {
+            background: rgba(188, 19, 254, 0.1);
+            border: 1px solid var(--neon-purple);
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .skill-node:hover {
+            background: var(--neon-purple);
+            color: #000;
+            box-shadow: 0 0 20px var(--neon-purple);
+            transform: scale(1.1);
+        }
+
+        /* --- PROJECTS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--neon-pink);
+            padding: 20px;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            background: rgba(255, 0, 85, 0.1);
+            transform: translateX(10px);
+        }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: var(--font-gaming);
+            font-weight: bold;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--neon-blue);
+            color: #000;
+            box-shadow: 0 0 30px var(--neon-blue);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            color: #555;
+            border-top: 1px solid #111;
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-logo">AI<span>.Student</span></a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <canvas id="bg-canvas"></canvas>
+    <div class="grid-overlay"></div>
 
     <div class="container">
-        <header>
-            <div class="hero-content">
-                <span class="badge">AITS Tirupati (Autonomous)</span>
-                <h1>Your Name</h1>
-                <p class="role-text">AI & Machine Learning Student</p>
-            </div>
-        </header>
+        <section class="hero" id="home">
+            <h1 id="glitch-name">NAME_ERROR</h1>
+            <p>AI & MACHINE LEARNING STUDENT</p>
+            <a href="#about" class="btn">INITIALIZE SYSTEM</a>
+        </section>
 
         <section id="about">
-            <h2 class="section-title">Professional Summary</h2>
-            <p class="about-p">
-                Aspiring AI Researcher and Developer currently pursuing Engineering at <strong>Annamacharya Institute of Technology and Sciences</strong>. 
-                I specialize in bridging the gap between complex data and intelligent user interfaces.
-            </p>
+            <div class="glass-panel">
+                <h2 class="section-title">01_BIOGRAPHY</h2>
+                <p>Decoding the future of intelligence at AITS Tirupati. I specialize in training neural architectures and building futuristic web interfaces. Focused on bridging the gap between human logic and synthetic cognition.</p>
+            </div>
         </section>
 
         <section id="skills">
-            <h2 class="section-title">Technical Arsenal</h2>
-            <div class="skills-flex">
-                <span class="skill-pill">Artificial Intelligence</span>
-                <span class="skill-pill">Machine Learning</span>
-                <span class="skill-pill">Python</span>
-                <span class="skill-pill">Neural Networks</span>
-                <span class="skill-pill">HTML5 / CSS3</span>
-                <span class="skill-pill">Git / GitHub</span>
+            <h2 class="section-title">02_LOAD_SKILLS</h2>
+            <div class="skills-container">
+                <div class="skill-node">Python</div>
+                <div class="skill-node">Tensorflow</div>
+                <div class="skill-node">Machine Learning</div>
+                <div class="skill-node">Neural Networks</div>
+                <div class="skill-node">HTML / CSS</div>
+                <div class="skill-node">Git / SVN</div>
+                <div class="skill-node">SQL_Database</div>
             </div>
         </section>
 
         <section id="projects">
-            <h2 class="section-title">Featured Intelligence</h2>
+            <h2 class="section-title">03_ARCHIVED_MISSIONS</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <h3>College Dashboard</h3>
-                    <p>Designed an administrative portal optimizing student data flow and resource allocation.</p>
-                    <div class="project-footer">View on GitHub →</div>
+                    <h3>NEURAL_DASHBOARD_V1</h3>
+                    <p>A smart administrative portal for AITS using predictive analytics for student performance tracking.</p>
                 </div>
                 <div class="project-card">
-                    <h3>ML Predictor</h3>
-                    <p>A supervised learning project analyzing datasets to predict outcome probabilities with 92% accuracy.</p>
-                    <div class="project-footer">View on GitHub →</div>
+                    <h3>VISION_MOD_04</h3>
+                    <p>Real-time image recognition model built with Python and OpenCV to classify hardware components.</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2 class="section-title">Connect</h2>
-            <div class="contact-card">
-                <p>Open for internships and research collaborations.</p>
-                <div class="contact-btns">
-                    <a href="mailto:yourname@email.com" class="btn-primary">Email Me</a>
-                    <a href="https://github.com/yourusername" target="_blank" class="btn-secondary">GitHub</a>
+            <div class="glass-panel" style="border-color: var(--neon-pink); box-shadow: 0 0 15px rgba(255, 0, 85, 0.2);">
+                <h2 class="section-title" style="color: var(--neon-pink); text-shadow: 0 0 5px var(--neon-pink);">04_COMMS_LINK</h2>
+                <p>Ready for collaboration or internship recruitments.</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:your@email.com" class="btn" style="border-color: var(--neon-pink); color: var(--neon-pink);">SEND_MAIL</a>
+                    <a href="#" class="btn" style="border-color: #fff; color: #fff;">GITHUB_REPO</a>
                 </div>
             </div>
         </section>
 
         <footer>
-            <p>© 2026 Developed by Your Name | AI Student @ AITS Tirupati</p>
+            TERMINAL // [USER_STU_AI] // © 2026
         </footer>
     </div>
 
+    <script>
+        // --- STARFIELD BACKGROUND LOGIC ---
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        class Star {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speed = Math.random() * 0.5;
+            }
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) this.y = 0;
+            }
+            draw() {
+                ctx.fillStyle = '#00f2ff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            for (let i = 0; i < 150; i++) stars.push(new Star());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(s => {
+                s.update();
+                s.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        // --- GLITCH TEXT EFFECT ---
+        const nameTag = document.getElementById('glitch-name');
+        const originalName = "YOUR NAME"; // REPLACE WITH YOUR NAME
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%";
+
+        function glitchEffect() {
+            let iteration = 0;
+            const interval = setInterval(() => {
+                nameTag.innerText = originalName.split("")
+                    .map((char, index) => {
+                        if (index < iteration) return originalName[index];
+                        return chars[Math.floor(Math.random() * 40)];
+                    }).join("");
+                
+                if (iteration >= originalName.length) clearInterval(interval);
+                iteration += 1 / 3;
+            }, 30);
+        }
+
+        window.addEventListener('resize', resize);
+        window.onload = () => {
+            init();
+            animate();
+            glitchEffect();
+        };
+    </script>
 </body>
 </html>
